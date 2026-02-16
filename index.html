@@ -21,10 +21,6 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <!-- Link CSS -->
     <link rel="stylesheet" href="./styles/style.css">
-
-
-
-
 </head>
 
 <body>
@@ -204,52 +200,8 @@
             <h2 class="text-4xl font-bold">Trending Now</h2>
         </div>
         <div class="max-w-7xl mx-auto py-10">
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="card bg-base-100 shadow-md border border-base-200">
-                    <figure class="bg-gray-100 rounded-t-xl">
-                        <img src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg" alt="Backpack"
-                            class="h-72 object-contain p-6" />
-                    </figure>
-                    <div class="card-body">
-                        <!-- Category + Rating -->
-                        <div class="flex justify-between items-center mb-2">
-
-                            <span class="badge bg-indigo-200 text-indigo-800 font-semibold">
-                                Men's Clothing
-                            </span>
-
-                            <div class="flex items-center gap-1 text-sm text-gray-500">
-                                <i class="fa-solid fa-star text-yellow-400"></i> <span>3.9 (120)</span>
-                            </div>
-
-                        </div>
-
-                        <!-- Title -->
-                        <h2 class="card-title text-base font-semibold">
-                            Fjallraven - Foldsack No. 1 Backpack
-                        </h2>
-
-                        <!-- Price -->
-                        <p class="text-xl font-bold text-gray-800">
-                            $109.95
-                        </p>
-
-                        <!-- Buttons -->
-                        <div class="card-actions grid grid-cols-2 gap-3 mt-4">
-
-                            <button class="btn btn-outline gap-2 w-full">
-                                <i class="fa-regular fa-eye"></i> Details
-                            </button>
-
-                            <button class="btn btn-primary gap-2 w-full">
-                                <i class="fa-solid fa-cart-shopping"></i> Add
-                            </button>
-
-                        </div>
-
-
-                    </div>
-                </div>
+            <div id="featured-products" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Featured card -->
             </div>
         </div>
     </section>
