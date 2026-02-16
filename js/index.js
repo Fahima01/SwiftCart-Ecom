@@ -168,7 +168,6 @@ const displayProductDetails = (details) => {
     document.getElementById("product_modal").showModal();
 }
 
-
 // Add to cart button function
 const handleAddToCart = (id) => {
 
@@ -177,5 +176,10 @@ const handleAddToCart = (id) => {
 };
 
 
+// Load the product categories
+
+
 // call function
 loadProducts();
+
+
