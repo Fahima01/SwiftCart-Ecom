@@ -23,19 +23,19 @@ const loadProducts = () => {
         .then(res => res.json())
         .then(data => {
 
-            console.log("All Products:", data);
+            //console.log("All Products:", data);
 
             // sort by highest rating
             const sortedProducts = data.sort((a, b) => {
                 return b.rating.rate - a.rating.rate;
             });
 
-            console.log("Sorted Products:", sortedProducts);
+            //console.log("Sorted Products:", sortedProducts);
 
             // get top 3 products
             const topProducts = sortedProducts.slice(0, 3);
 
-            console.log("Top 3 Products:", topProducts);
+            //console.log("Top 3 Products:", topProducts);
 
             // send to display function
             displayProducts(topProducts);
@@ -56,7 +56,7 @@ const displayProducts = (products) => {
     // loop through products
     products.forEach(product => {
 
-        console.log("Displaying:", product.title);
+        //console.log("Displaying:", product.title);
 
         const productCard = document.createElement("div");
 
@@ -93,7 +93,7 @@ const displayProducts = (products) => {
                         <!-- Buttons -->
                         <div class="card-actions grid grid-cols-2 gap-3 mt-4">
 
-                            <button onclick="handleDetails(${product.id})" class="btn btn-outline gap-2 w-full">
+                            <button onclick="productDetails(${product.id})" class="btn btn-outline gap-2 w-full">
                                 <i class="fa-regular fa-eye text-indigo-600"></i> Details
                             </button>
 
@@ -118,17 +118,61 @@ const displayProducts = (products) => {
 
 
 // Details button function
-const handleDetails = (id) => {
+const productDetails = async (id) => {
 
-    console.log("Details clicked for product ID:", id);
-
+    const url = `https://fakestoreapi.com/products/${id}`
+    //console.log(url);
+    fetch(url)
+        .then(res => res.json())
+        .then(details => displayProductDetails(details))
 };
+
+const displayProductDetails = (details) => {
+    // console.log(details)
+    const detailsCard = document.getElementById("details-card")
+    detailsCard.innerHTML = `
+    <div class="mb-2">
+                        <!-- Title -->
+                        <h2 class="card-title text-2xl font-semibold mb-3">
+                            ${details.title}
+                        </h2>
+                        <div class="flex items-center justify-start gap-2 text-sm text-gray-500">
+                            <span class="badge bg-indigo-200 text-indigo-800 font-semibold">
+                                ${details.category}
+                            </span>
+                            <i class="fa-solid fa-star text-yellow-400"></i><span>${details.rating.rate}</span>
+                        </div>
+
+                    </div>
+                    <!-- Price -->
+                    <p class="text-xl font-bold text-gray-800 my-3">
+                        $${details.price}
+                    </p>
+                    <p class="text-slate-600"><span class="font-bold text-black">Product Details:</span>
+                    ${details.description}</p>
+
+                    <!-- Buttons -->
+                    <div class="card-actions flex justify-end gap-3 mt-8">
+
+                        <button class="btn btn-outline gap-2 ">
+                            <i class="fa-solid fa-cart-shopping text-indigo-600"></i> Buy now
+                        </button>
+
+                        <button class="btn btn-primary gap-2 ">
+                            <i class="fa-solid fa-cart-shopping"></i> Add to cart
+                        </button>
+
+                    </div>
+    
+    `;
+    document.getElementById("product_modal").showModal();
+}
 
 
 // Add to cart button function
 const handleAddToCart = (id) => {
 
-    console.log("Add clicked for product ID:", id);
+    //console.log("Add clicked for product ID:", id);
 
 };
 
