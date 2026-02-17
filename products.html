@@ -89,10 +89,77 @@
     <!-- Banner section -->
     <section class="py-16">
         <h1 class="text-5xl font-bold text-center">Our Products</h1>
-        <div id="product-categories" class="flex max-w-7xl mx-auto justify-center mt-8 gap-5">
-
+        <div id="product-categories" class="flex flex-wrap max-w-7xl mx-auto justify-center mt-8 gap-5">
+            <!-- product categories -->
         </div>
     </section>
+
+    <!-- all products display -->
+    <section class="max-w-7xl mx-auto pb-16">
+        <div id="all-products" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Load all products -->
+        </div>
+        <dialog id="product_modal" class="modal">
+            <div class="modal-box">
+                <form method="dialog">
+                    <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                </form>
+                <div id="details-card" class="">
+                    <!-- Details Card -->
+                </div>
+        </dialog>
+    </section>
+
+    <!-- Footer -->
+    <footer class=" bg-[#1b2736] text-slate-300 px-10 pt-10">
+        <div class=" footer flex max-w-7xl mx-auto footer  sm:footer-horizontal justify-between pb-8">
+            <aside class="w-80">
+                <a href="/" class="text-indigo-400 text-xl font-semibold">SwiftCart</a>
+                <p>Your one-stop shop for all your fashion and lifestyle needs.<br> Quality products,
+                    fast
+                    delivery, and
+                    excellent support</p>
+            </aside>
+            <nav>
+                <h6 class="footer-title">Quick Links</h6>
+                <a class="link link-hover">Home</a>
+                <a class="link link-hover">Products</a>
+                <a class="link link-hover">About</a>
+                <a class="link link-hover">Contact</a>
+            </nav>
+            <nav>
+                <h6 class="footer-title">Support</h6>
+                <a class="link link-hover">FAQ</a>
+                <a class="link link-hover">Shipping</a>
+                <a class="link link-hover">Returns</a>
+                <a class="link link-hover">Privacy policy</a>
+            </nav>
+            <nav>
+                <h6 class="footer-title">Subscribe Our Newsletter</h6>
+                <p>The latest news, articles, and resources, sent to your inbox weekly.</p>
+                <fieldset class="w-80 mt-4">
+                    <div class="join">
+                        <input type="text" placeholder="Enter your email"
+                            class="input input-bordered join-item text-slate-600" />
+                        <button class="btn btn-primary join-item">Subscribe</button>
+                    </div>
+                </fieldset>
+            </nav>
+        </div>
+
+        <div class="max-w-7xl mx-auto flex justify-between items-center py-10 border-t-1 border-slate-600">
+            <div class="">
+                <p>@ 2025 SwiftCart, Inc. All rights reserved.</p>
+            </div>
+            <div class="flex gap-3 text-2xl">
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-square-x-twitter"></i>
+                <i class="fa-brands fa-square-instagram"></i>
+                <i class="fa-brands fa-linkedin-in"></i>
+                <i class="fa-regular fa-envelope"></i>
+            </div>
+        </div>
+    </footer>
 
     <script src="./js/product.js"></script>
 </body>
