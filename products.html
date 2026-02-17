@@ -65,7 +65,7 @@
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                             d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
                                     </svg>
-                                    <span
+                                    <span id="cart-count"
                                         class="badge badge-sm indicator-item bg-[#422ad5] rounded-full p-2 text-white">0</span>
                                 </div>
                             </div>
@@ -86,18 +86,28 @@
         </nav>
     </section>
     <!-- Navbar ends -->
-    <!-- Banner section -->
-    <section class="py-16">
+    <!-- Product section -->
+    <section class="pt-16">
         <h1 class="text-5xl font-bold text-center">Our Products</h1>
         <div id="product-categories" class="flex flex-wrap max-w-7xl mx-auto justify-center mt-8 gap-5">
             <!-- product categories -->
+
+        </div>
+    </section>
+
+    <section id="spinner" class="flex justify-center items-center hidden">
+        <div class="py-8">
+            <span class="loading loading-spinner loading-xl text-primary"></span>
         </div>
     </section>
 
     <!-- all products display -->
-    <section class="max-w-7xl mx-auto pb-16">
+    <section class="max-w-7xl mx-auto mt-10 pb-16">
+
         <div id="all-products" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
             <!-- Load all products -->
+
         </div>
         <dialog id="product_modal" class="modal">
             <div class="modal-box">

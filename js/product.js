@@ -1,4 +1,5 @@
 const loadProductCategoris = () => {
+
     const url = ("https://fakestoreapi.com/products/categories");
     fetch(url)
         .then(res => res.json())
@@ -6,10 +7,10 @@ const loadProductCategoris = () => {
 }
 
 const displayCategory = (categories) => {
-    console.log(categories)
+    //console.log(categories)
 
     const productCategories = document.getElementById("product-categories");
-    productCategories.innerHTML = `<button onclick="loadAllProducts()" class="btn btn-outline btn-primary rounded-3xl">
+    productCategories.innerHTML = `<button id="btn-all" onclick="loadAllProducts(); setActiveButton('btn-all')" class="btn btn-outline btn-primary rounded-3xl">
             All
         </button>`;
 
@@ -39,21 +40,57 @@ const displayCategory = (categories) => {
 
 }
 
+const setActiveButton = (id) => {
+    const buttons = document.querySelectorAll("#product-categories button");
+    //console.log(buttons)
+    buttons.forEach(btn => {
+        btn.classList.remove("btn-primary");
+        btn.classList.add("btn-outline");
+    });
+
+
+    const activeBtn = document.getElementById(id);
+
+    activeBtn.classList.remove("btn-outline");
+    activeBtn.classList.add("btn-primary");
+
+}
+
 loadProductCategoris();
 
+const loadSpinner = (status) => {
+    if (status == true) {
+        document.getElementById("spinner").classList.remove("hidden");
+        document.getElementById("all-products").classList.add("hidden");
+
+    } else {
+        document.getElementById("all-products").classList.remove("hidden");
+        document.getElementById("spinner").classList.add("hidden");
+
+    }
+}
 
 
 // Show products by category
 
 const loadProductsByCategory = (category) => {
+    loadSpinner(true);
     //console.log("Button clicked:", category);
     const url = `https://fakestoreapi.com/products/category/${category}`;
     fetch(url)
         .then(res => res.json())
-        .then(data => displayCategoryItem(data))
+        .then(data => {
+
+            displayCategoryItem(data);
+
+            loadSpinner(false); // ✅ hide spinner HERE
+
+        });
+
 }
 
 const displayCategoryItem = (products) => {
+
     const categoryProducts = document.getElementById("all-products");
     categoryProducts.innerHTML = "";
 
@@ -115,10 +152,44 @@ const displayCategoryItem = (products) => {
 
 loadProductsByCategory();
 
+
+// Add Cart Count
+const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+
+// update cart count
+const updateCartCount = () => {
+    const countElement = document.getElementById("cart-count");
+
+    if (countElement) {
+        countElement.innerText = cart.length;
+    }
+};
+
+updateCartCount();
+
+// add to cart
+const handleAddToCart = (id) => {
+
+    cart.push(id);
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    updateCartCount();
+    alert("✅ Item added to cart!");
+};
+
+
+
+
 const loadAllProducts = () => {
+    loadSpinner(true);
     fetch("https://fakestoreapi.com/products")
         .then(res => res.json())
-        .then(data => displayAllProducts(data))
+        .then(data => {
+            displayAllProducts(data);
+            loadSpinner(false);
+
+        });
 
 }
 
@@ -179,12 +250,8 @@ const displayAllProducts = (products) => {
         
         `;
         allProductContainer.appendChild(productCard);
-
     }
-
 }
-
-
 
 //Details of products
 const productDetails = async (id) => {
@@ -236,6 +303,8 @@ const displayProductDetails = (details) => {
     `;
     document.getElementById("product_modal").showModal();
 }
+
+// Load Spinner
 
 
 
