@@ -91,7 +91,7 @@
         <div class="relative bg-[url('/Assets/banner-image.png')] bg-cover bg-center">>
             <div class="absolute inset-0 bg-gradient-to-r from-slate-950/90 to-slate-950/20"></div>
 
-            <div class="relative z-10 w-11/12 mx-auto px-6 py-36">
+            <div class="relative z-10 w-11/12 mx-auto px-6 py-20 md:py-36">
                 <div class="max-w-2xl text-white">
                     <h1 class="mb-5 text-5xl font-bold">Best Collection For You</h1>
                     <p class="mb-5">
@@ -108,7 +108,7 @@
 
     <!-- Hero Section Ends -->
     <!-- why choose us -->
-    <section class="py-16 bg-gray-100">
+    <section class="py-16 bg-gray-100 px-6">
         <h2 class="text-4xl font-bold text-center mb-4">Why Choose Us</h2>
         <p class="text-slate-500 font-semibold text-center">We provide the best shopping experiences with top notch
             services
@@ -198,7 +198,7 @@
     <!-- why choose us end -->
 
     <!-- Featured item section -->
-    <section class="py-16">
+    <section class="py-16 px-6">
         <div class="max-w-7xl m-auto">
             <h2 class="text-4xl font-bold">Trending Now</h2>
         </div>
@@ -220,40 +220,46 @@
 
         </dialog>
     </section>
-    <section class="bg-gray-100 py-16">
-        <div class="max-w-6xl m-auto space-y-5">
+    <section class="bg-gray-100 py-16 px-6">
+        <div class="max-w-6xl m-auto space-y-5 sm:px-5">
             <h2 class="text-4xl font-bold text-center">FAQ's</h2>
             <p class="text-center font-semibold text-slate-600">General qurey from our customer</p>
             <div class="collapse collapse-plus bg-base-100 border border-base-300">
                 <input type="radio" name="my-accordion-3" checked="checked" />
-                <div class="collapse-title font-semibold">How do I create an account?</div>
-                <div class="collapse-content text-sm">Click the "Sign Up" button in the top right corner and follow the
-                    registration process.</div>
+                <div class="collapse-title font-semibold">What is your return or exchange policy?</div>
+                <div class="collapse-content text-sm">We offer a 30-day return or exchange policy on all products. Items
+                    must be unused, in original packaging, and returned with a receipt.</div>
             </div>
             <div class="collapse collapse-plus bg-base-100 border border-base-300">
                 <input type="radio" name="my-accordion-3" />
-                <div class="collapse-title font-semibold">I forgot my password. What should I do?</div>
-                <div class="collapse-content text-sm">Click on "Forgot Password" on the login page and follow the
-                    instructions sent to your email.</div>
+                <div class="collapse-title font-semibold">How long does delivery take?</div>
+                <div class="collapse-content text-sm">Standard delivery usually takes 3–7 business days. Expedited
+                    shipping options are available at checkout for faster delivery.</div>
             </div>
             <div class="collapse collapse-plus bg-base-100 border border-base-300">
                 <input type="radio" name="my-accordion-3" />
-                <div class="collapse-title font-semibold">How do I update my profile information?</div>
-                <div class="collapse-content text-sm">Go to "My Account" settings and select "Edit Profile" to make
-                    changes.</div>
+                <div class="collapse-title font-semibold">Do you ship internationally?</div>
+                <div class="collapse-content text-sm">Yes, we ship worldwide. Shipping charges and delivery times vary
+                    depending on your location, and you’ll see the details at checkout.
+                </div>
             </div>
-        </div>
+            <div class="collapse collapse-plus bg-base-100 border border-base-300">
+                <input type="radio" name="my-accordion-3" />
+                <div class="collapse-title font-semibold">How can I track my order?</div>
+                <div class="collapse-content text-sm">After placing an order, you’ll receive a confirmation email with a
+                    tracking number. You can use it to monitor your order’s status until it reaches your doorstep.
+                </div>
+            </div>
     </section>
     <!-- Featured products ends -->
-    <footer class=" bg-[#1b2736] text-slate-300 px-10 pt-10">
-        <div class=" footer flex max-w-7xl mx-auto footer  sm:footer-horizontal justify-between pb-8">
-            <aside class="w-80">
+    <footer class=" bg-[#1b2736] text-slate-300 md:px-10 px-6 pt-10">
+        <div
+            class=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 footer max-w-7xl mx-auto footer  sm:footer-horizontal justify-between pb-8">
+            <div class="pr-8">
                 <a href="/" class="text-indigo-400 text-xl font-semibold">SwiftCart</a>
-                <p>Your one-stop shop for all your fashion and lifestyle needs.<br> Quality products,
-                    fast
-                    delivery, and
-                    excellent support</p>
-            </aside>
+                <p class="break-words">Your one-stop shop for all your fashion and lifestyle needs. Quality products,
+                    fast, delivery, and excellent support.</p>
+            </div>
             <nav>
                 <h6 class="footer-title">Quick Links</h6>
                 <a class="link link-hover">Home</a>
@@ -270,22 +276,22 @@
             </nav>
             <nav>
                 <h6 class="footer-title">Subscribe Our Newsletter</h6>
-                <p>The latest news, articles, and resources, sent to your inbox weekly.</p>
+                <p class="md:pr-0 pr-8">The latest news, articles, and resources, sent to your inbox weekly.</p>
                 <fieldset class="w-80 mt-4">
-                    <div class="join">
+                    <div class="flex flex-wrap">
                         <input type="text" placeholder="Enter your email"
-                            class="input input-bordered join-item text-slate-600" />
-                        <button class="btn btn-primary join-item">Subscribe</button>
+                            class="input input-bordered md:w-50 w-30  text-slate-600" />
+                        <button class="btn btn-primary ">Subscribe</button>
                     </div>
                 </fieldset>
             </nav>
         </div>
 
-        <div class="max-w-7xl mx-auto flex justify-between items-center py-10 border-t-1 border-slate-600">
+        <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center py-10 border-t-1 border-slate-600">
             <div class="">
                 <p>@ 2025 SwiftCart, Inc. All rights reserved.</p>
             </div>
-            <div class="flex gap-3 text-2xl">
+            <div class="flex gap-3 md:pt-0 pt-3 text-2xl">
                 <i class="fa-brands fa-facebook"></i>
                 <i class="fa-brands fa-square-x-twitter"></i>
                 <i class="fa-brands fa-square-instagram"></i>

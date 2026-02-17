@@ -1,3 +1,4 @@
+
 const loadProductCategoris = () => {
 
     const url = ("https://fakestoreapi.com/products/categories");
@@ -58,6 +59,8 @@ const setActiveButton = (id) => {
 
 loadProductCategoris();
 
+// Load Spinner
+
 const loadSpinner = (status) => {
     if (status == true) {
         document.getElementById("spinner").classList.remove("hidden");
@@ -69,7 +72,6 @@ const loadSpinner = (status) => {
 
     }
 }
-
 
 // Show products by category
 
@@ -150,9 +152,6 @@ const displayCategoryItem = (products) => {
 
 }
 
-loadProductsByCategory();
-
-
 // Add Cart Count
 const cart = JSON.parse(localStorage.getItem("cart") || "[]");
 
@@ -178,9 +177,6 @@ const handleAddToCart = (id) => {
     alert("✅ Item added to cart!");
 };
 
-
-
-
 const loadAllProducts = () => {
     loadSpinner(true);
     fetch("https://fakestoreapi.com/products")
@@ -192,6 +188,8 @@ const loadAllProducts = () => {
         });
 
 }
+
+loadAllProducts();
 
 const displayAllProducts = (products) => {
     //console.log(products)
@@ -304,9 +302,5 @@ const displayProductDetails = (details) => {
     document.getElementById("product_modal").showModal();
 }
 
-// Load Spinner
 
 
-
-
-loadAllProducts();
